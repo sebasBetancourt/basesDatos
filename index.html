@@ -11,7 +11,7 @@
     <div class="Tittle">
         <h1>Normalizacion de Base de Datos</h1>
     </div>
-    <div class="Subtittle">
+    <div class="Introduction">
         <h2>¿Qué es la normalización</h2>
         <p>La normalización de bases de datos es un proceso sistematico que sigue reglas matemáticas<br>
             formales con el fin de organizar los datos en estructuras logicas que favorezcan la eficiencia,<br>
@@ -24,8 +24,54 @@
             claras, solidas y consistentes.
         </p>
     </div>
-
-
-    
+    <div class="Objective">
+        <p>La normalización persigue múltiples objetivos prácticos, todos orientados a mejorar la calidad del<br>
+            diseño de la base de datos y evita diversos tipos de anomlias, sabiendo esto vamos a ver en mas detalle,<br>
+            que objetivos tiene la normalización</p>
+        <h2>Objetivos detallados</h2>
+        <table>
+            <tr>
+                <td>Objetivo</td>
+                <td>Problema que resuelve</td>
+                <td>Ejemplo Concreto</td>
+            </tr>
+            <tr>
+                <td>Eliminar redundancia</td>
+                <td>Datos duplicados que consumen<br>
+                    espacio innecesario</td>
+                <td>Ingresar la dirección del cliente en<br>
+                    cada fila de un pedido genera<br>
+                    repetición.</td>
+            </tr>
+            <tr>
+                <td>Evitar anomalías de inserción.</td>
+                <td>Necesidad de registrar datos<br>
+                    incompletos o incoherentes.</td>
+                <td>No poder registrar un<br>
+                    un departamento sin tener al menos<br>
+                    un empleo asignado.</td>
+            </tr>
+            <tr>
+                <td>Prevenir anomalías de<br>
+                    actualización</td>
+                <td>Inconsistencias al modificar datos<br>
+                    repetidos</td>
+                <td>Cambiar el número de teléfono de<br>
+                    un cliente en múltiples registros<br>
+                    manualmente</td>
+            </tr>
+            <tr>
+                <td>Eliminar anomalías de borrado</td>
+                <td>Pérdida accidental de información<br>
+                    relevante</td>
+                <td>Borrar al último empleado de un<br>
+                    departamento elimina también el<br>
+                    registro del mismo.</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        
+    </div>
 </body>
 </html>
