@@ -13,9 +13,9 @@
     </div>
     <div class="Introduction">
         <h2>¿Qué es la normalización</h2>
-        <p>La normalización de bases de datos es un proceso sistematico que sigue reglas matemáticas<br>
-            formales con el fin de organizar los datos en estructuras logicas que favorezcan la eficiencia,<br>
-            consistencias y escalabilidad del sistema. Este proceso forma parte esencial del diseño de bases<br>
+        <p>La normalización de bases de datos es un proceso sistematico que sigue reglas matemáticas
+            formales con el fin de organizar los datos en estructuras logicas que favorezcan la eficiencia,
+            consistencias y escalabilidad del sistema. Este proceso forma parte esencial del diseño de bases
             datos relacionales y se centra en:<br>
             <br>
             -Estructurar los datos en tablas interrelacionadas de forma coherente y lógica.<br>
@@ -26,8 +26,8 @@
     </div>
     <div class="Objective">
         <p>La normalización persigue múltiples objetivos prácticos, todos orientados a mejorar la calidad del<br>
-            diseño de la base de datos y evita diversos tipos de anomlias, sabiendo esto vamos a ver en mas detalle,<br>
-            que objetivos tiene la normalización</p>
+        diseño de la base de datos y evita diversos tipos de anomlias, sabiendo esto vamos a ver en mas detalle,<br>
+        que objetivos tiene la normalización</p>
         <h2>Objetivos detallados</h2>
         <table>
             <tr>
@@ -70,8 +70,49 @@
             </tr>
         </table>
     </div>
-    <div>
-        
+    <div class="normalización">
+        <h2>Normalización de datos</h2>
+        <p>Esto se logra dividiendo las tablas en formas normales 1FN, 2FN, 3FN,<br>
+            cada una de estas formas resuelve distintos problemas</p>
     </div>
+    <div class="onefn">
+        <h2>1 Forma Normal (1FN)</h2>
+        <h3>¿Que se busca?</h3>
+        <p>1.Que cada celda tenga un solo valor dicho de otra manera que sus valores sean atomicos.<br>
+            2.Que los campos repitan el mismo tipo de datos.<br>
+            3.Que no haya repeticiones de grupo de datos.
+        </p>
+        <h3>Problemas que resuelve</h3>
+        <p>Evita celdas con listas, múltiples valores o estructuras complejas dentro de una sola columna</p>
+            <div class="ejemplo_1fn">
+
+            </div>
+    </div>
+    <div class="twofn">
+        <h2>2 Forma Normal (2FN)</h2>
+        <h3>¿Que requiere?</h3>
+        <p>1.Cumplir con la 1FN<br>
+            2.Que todas las columnas dependan completamente de la clave primaria.
+        </p>
+        <h3>Problemas que resuelve</h3>
+        <p>Evita que algunos campos dependan solo de parte de la clave y no de toda ella (dependencias parciales).</p>
+            <div class="ejemplo_2fn">
+
+            </div>
+    </div>
+    <div class="threefn">
+        <h2>3 Forma Normal (3FN)</h2>
+        <h3>¿Que requiere?</h3>
+        <p>1.Cumplir con la 2FN<br>
+            2.Eliminar las dependencias transitivas: ningún campo no clave debe depender de otro campo que<br>
+            tampoco es clave.
+        </p>
+        <h3>Problemas que resuelve</h3>
+        <p>Evita que un dato dependa de otro dato que no es clave primaria, lo que puede causar inconsistencias.</p>
+            <div class="ejemplo_3fn">
+
+            </div>
+    </div>
+
 </body>
 </html>
