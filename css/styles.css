@@ -11,28 +11,64 @@ body{
     padding-right: 200px;
     padding-top: 100px;
     padding-bottom: 100px;
+    background-color: #1e1e2f;
+    color: #e0e0e0;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .Tittle{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+.Introduction{
+    max-width: 1000px;
+    margin: auto;
+    background-color: #2a2a40;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    margin-bottom: 30px;
 }
 
 .Introduction h2{
-
+    font-size: 26px;
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 10px;
 }
 
 .Introduction p{
     padding-top: 20px;
+    line-height: 1.6;
+    font-size: 17px;
+    color: #d0d0d0;
 }
 
 .Objective{
     padding-top: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #2a2a40;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    margin-bottom: 30px;
+}
+
+.Objective p{
+    line-height: 1.6;
+    font-size: 17px;
+    color: #d0d0d0;
 }
 
 .Objective h2{
     padding-top: 20px;
+    font-size: 26px;
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 10px;
 }
 
 .Objective table{
@@ -51,41 +87,51 @@ table{
 }
 
 table tr:first-child {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #00bfa6;
+    color: #ffffff;
     font-weight: bold;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 12px 15px;
+    border: 1px solid #3a3a5a;
+    padding: 14px 18px;
     vertical-align: top;
     text-align: left;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #32324a;
+
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: #3a3a60;
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #00bfa6;
     color: white;
     font-weight: bold;
 }
 
 td {
-    color: #333;
+    color: #dddddd;
 }
 .normalización{
     padding-top: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #2a2a40;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    margin-bottom: 30px;
 }
 
 .normalización h2{
-
+    font-size: 26px;
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 10px;
 }
 
 .normalización p{
@@ -94,47 +140,89 @@ td {
 
 .onefn{
     padding-top: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #2a2a40;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    margin-bottom: 30px;
 }
 
 .onefn h2{
+    font-size: 26px;
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 10px;
 }
 
 .onefn h3{
     padding-top: 20px;
+    color: #66ffe0;
 }
 
 .onefn p{
     padding-top: 20px;
+    line-height: 1.6;
+    font-size: 17px;
+    color: #d0d0d0;
 }
 
 .twofn{
     padding-top: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #2a2a40;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    margin-bottom: 30px;
 }
 
 .twofn h2{
+    font-size: 26px;
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 10px;
 }
 
 .twofn h3{
     padding-top: 20px;
+    color: #66ffe0;
 }
 
 .twofn p{
     padding-top: 20px;
+    line-height: 1.6;
+    font-size: 17px;
+    color: #d0d0d0;
 }
 
 .threefn{
     padding-top: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #2a2a40;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    margin-bottom: 30px;
 }
 
 .threefn h2{
+    font-size: 26px;
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 10px;
 }
 
 .threefn h3{
     padding-top: 20px;
+    color: #66ffe0;
 }
 
 .threefn p{
     padding-top: 20px;
+    line-height: 1.6;
+    font-size: 17px;
+    color: #d0d0d0;
 }
 
 
