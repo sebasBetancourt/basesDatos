@@ -17,6 +17,7 @@ body{
 }
 
 .Tittle{
+    padding: 0px 10px 40px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,6 +26,7 @@ body{
 }
 
 .Introduction{
+    padding: 20px 10px 10px 10px;
     max-width: 1000px;
     margin: auto;
     background-color: #2a2a40;
@@ -48,7 +50,7 @@ body{
 }
 
 .Objective{
-    padding-top: 20px;
+    padding: 20px 10px 10px 10px;
     max-width: 1000px;
     margin: auto;
     background-color: #2a2a40;
@@ -82,7 +84,6 @@ table{
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    font-family: ;
     font-size: 16px;
 }
 
@@ -118,7 +119,7 @@ td {
     color: #dddddd;
 }
 .normalización{
-    padding-top: 20px;
+    padding: 20px 10px 10px 10px;
     max-width: 1000px;
     margin: auto;
     background-color: #2a2a40;
@@ -139,7 +140,7 @@ td {
 }
 
 .onefn{
-    padding-top: 20px;
+    padding: 20px 10px 10px 10px;
     max-width: 1000px;
     margin: auto;
     background-color: #2a2a40;
@@ -168,7 +169,7 @@ td {
 }
 
 .twofn{
-    padding-top: 20px;
+    padding: 20px 10px 10px 10px;
     max-width: 1000px;
     margin: auto;
     background-color: #2a2a40;
@@ -197,7 +198,7 @@ td {
 }
 
 .threefn{
-    padding-top: 20px;
+    padding: 20px 10px 10px 10px;
     max-width: 1000px;
     margin: auto;
     background-color: #2a2a40;
@@ -225,7 +226,23 @@ td {
     color: #d0d0d0;
 }
 
+#chartdiv {
+    width: 100%;
+    height: 30em;
+}
 
+#chartdiv2 {
+    width: 100%;
+    height: 30em;
+}
+#chartdiv3 {
+    width: 100%;
+    height: 500px;
+}
 
-
-
+ul{
+    list-style: none;
+}
+ol{
+    list-style: none;
+}

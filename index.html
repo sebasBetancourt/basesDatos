@@ -6,6 +6,11 @@
     <title>Bases de Datos</title>
     <link rel="stylesheet" href="css/styles.css">
     <script type="module" defer src="js/main.js" ></script>
+    <script src="./amchart/index.js"></script>
+    <script src="./amchart/xy.js"></script>
+    <script src="./amchart/Animated.js"></script>
+    <script src="./amchart/percent.js"></script>
+
 </head>
 <body>
     <div class="Tittle">
@@ -84,9 +89,55 @@
         </p>
         <h3>Problemas que resuelve</h3>
         <p>Evita celdas con listas, múltiples valores o estructuras complejas dentro de una sola columna</p>
-            <div class="ejemplo_1fn">
+        <h3>Ejemplo antes de la 1FN</h3>
+        <table>
+            <tr>
+                <th>VentaID</th>
+                <th>Fecha</th>
+                <th>Productos (JSON)</th>
+                <th>Cliente</th>
+            </tr>
+            <tr>
+                <td>1001</td>
+                <td>2023-05-10</td>
+                <td>[{"id":"P01","nombre":"Laptop","qty":2}]</td>
+                <td>C001</td>
+            </tr>
+        </table>
 
-            </div>
+        <h3>Ejemplo después de aplicar 1FN</h3>
+        <table>
+            <tr>
+                <th>VentaID</th>
+                <th>Fecha</th>
+                <th>ProductoID</th>
+                <th>NombreProducto</th>
+                <th>Cantidad</th>
+                <th>Cliente</th>
+            </tr>
+            <tr><td>1001</td><td>2023-05-10</td><td>P01</td><td>Laptop</td><td>2</td><td>C001</td></tr>
+            <tr><td>1002</td><td>2023-05-12</td><td>P02</td><td>Mouse</td><td>1</td><td>C002</td></tr>
+            <tr><td>1002</td><td>2023-05-12</td><td>P03</td><td>Monitor</td><td>1</td><td>C002</td></tr>
+            <tr><td>1003</td><td>2023-05-13</td><td>P04</td><td>Teclado</td><td>3</td><td>C001</td></tr>
+            <tr><td>1004</td><td>2023-05-14</td><td>P01</td><td>Laptop</td><td>1</td><td>C003</td></tr>
+            <tr><td>1004</td><td>2023-05-14</td><td>P04</td><td>Teclado</td><td>2</td><td>C003</td></tr>
+            <tr><td>1005</td><td>2023-05-15</td><td>P03</td><td>Monitor</td><td>2</td><td>C004</td></tr>
+            <tr><td>1006</td><td>2023-05-16</td><td>P02</td><td>Mouse</td><td>3</td><td>C002</td></tr>
+            <tr><td>1007</td><td>2023-05-17</td><td>P05</td><td>Auriculares</td><td>2</td><td>C005</td></tr>
+            <tr><td>1007</td><td>2023-05-17</td><td>P06</td><td>Impresora</td><td>1</td><td>C005</td></tr>
+            <tr><td>1008</td><td>2023-05-18</td><td>P07</td><td>Webcam</td><td>2</td><td>C006</td></tr>
+            <tr><td>1008</td><td>2023-05-18</td><td>P08</td><td>Micrófono</td><td>1</td><td>C006</td></tr>
+            <tr><td>1009</td><td>2023-05-19</td><td>P09</td><td>Disco Duro</td><td>3</td><td>C002</td></tr>
+            <tr><td>1009</td><td>2023-05-19</td><td>P10</td><td>Memoria RAM</td><td>2</td><td>C002</td></tr>
+            <tr><td>1010</td><td>2023-05-20</td><td>P11</td><td>Silla Gamer</td><td>1</td><td>C007</td></tr>
+            <tr><td>1010</td><td>2023-05-20</td><td>P12</td><td>Router WiFi</td><td>2</td><td>C007</td></tr>
+        </table><br>
+
+
+
+        <div class="ejemplo_1fn">
+            <div id="chartdiv"></div>
+        </div>
     </div>
     <div class="twofn">
         <h2>2 Forma Normal (2FN)</h2>
@@ -96,21 +147,132 @@
         </p>
         <h3>Problemas que resuelve</h3>
         <p>Evita que algunos campos dependan solo de parte de la clave y no de toda ella (dependencias parciales).</p>
-            <div class="ejemplo_2fn">
+        <h3>Ejemplo detallado:</h3><br>
 
-            </div>
+        <strong>Tabla en 1FN (Matrículas):</strong>
+        <table>
+            <tr><th>EstudianteID</th><th>CursoID</th><th>NombreEst</th><th>NombreCurso</th><th>Créditos</th><th>Aula</th></tr>
+            <tr><td>E001</td><td>C101</td><td>Ana</td><td>Álgebra</td><td>4</td><td>A203</td></tr>
+            <tr><td>E001</td><td>C102</td><td>Ana</td><td>Física</td><td>3</td><td>B105</td></tr>
+        </table>
+
+        <h3>Problemas identificados:</h3>
+        <ul class="ulFormTwo">
+            <li>NombreEstdepende solo de EstudianteID, no de la combinación con CursoID.</li>
+            <li>NombreCurso, Créditos y Aula dependen únicamente de CursoID.</li>
+            <li>Esto genera <strong>dependencias parciales</strong>, violando la 2FN.</li>
+        </ul>
+
+        <h3>Solución: Descomposición en relaciones independientes</h3><br>
+
+        <strong>Tabla Estudiantes:</strong>
+        <table>
+            <tr><th>EstudianteID</th><th>NombreEst</th></tr>
+            <tr><td>E001</td><td>Ana</td></tr>
+        </table>
+
+        <strong>Tabla Cursos:</strong>
+        <table>
+            <tr><th>CursoID</th><th>NombreCurso</th><th>Créditos</th><th>Aula</th></tr>
+            <tr><td>C101</td><td>Álgebra</td><td>4</td><td>A203</td></tr>
+            <tr><td>C102</td><td>Física</td><td>3</td><td>B105</td></tr>
+        </table>
+
+        <strong>Tabla Matrículas (relación entre estudiantes y cursos):</strong>
+        <table>
+            <tr><th>EstudianteID</th><th>CursoID</th></tr>
+            <tr><td>E001</td><td>C101</td></tr>
+            <tr><td>E001</td><td>C102</td></tr>
+        </table>
+
+        <p>Este diseño elimina la redundancia, previene errores al actualizar o borrar datos y se adhiere completamente a la Segunda Forma Normal.</p>
+
+
+
+        <div class="ejemplo_2fn">
+            <div id="chartdiv2"></div>
+        </div>
     </div>
     <div class="threefn">
         <h2>3 Forma Normal (3FN)</h2>
-        <h3>¿Que requiere?</h3>
-        <p>1.Cumplir con la 2FN<br>
-            2.Eliminar las dependencias transitivas: ningún campo no clave debe depender de otro campo que<br>
-            tampoco es clave.
+        <h3>¿Qué se busca?</h3>
+        <p>
+            Eliminar dependencias transitivas; que ningún atributo dependa de otro atributo que no sea clave.
+            Cada tabla debe representar solo una entidad o relación con dependencias directas de la clave primaria.
         </p>
         <h3>Problemas que resuelve</h3>
-        <p>Evita que un dato dependa de otro dato que no es clave primaria, lo que puede causar inconsistencias.</p>
-            <div class="ejemplo_3fn">
+        <p>
+            Evita inconsistencias al modificar datos relacionados y facilita mantenimiento y actualización independientes.
+        </p>
 
+        <h3>Ejemplo detallado:</h3><br>
+
+        <strong>Tabla AsignaciónCursos (3FN):</strong>
+        <table>
+            <tr><th>CursoID</th><th>ProfesorID</th><th>Horario</th></tr>
+            <tr><td>C101</td><td>P001</td><td>Lunes 9am</td></tr>
+            <tr><td>C102</td><td>P002</td><td>Martes 10am</td></tr>
+            <tr><td>C103</td><td>P003</td><td>Miércoles 11am</td></tr>
+            <tr><td>C104</td><td>P001</td><td>Lunes 1pm</td></tr>
+            <tr><td>C105</td><td>P002</td><td>Martes 2pm</td></tr>
+            <tr><td>C106</td><td>P001</td><td>Viernes 8am</td></tr>
+            <tr><td>C107</td><td>P004</td><td>Jueves 9am</td></tr>
+            <tr><td>C108</td><td>P002</td><td>Jueves 11am</td></tr>
+            <tr><td>C109</td><td>P005</td><td>Lunes 10am</td></tr>
+            <tr><td>C110</td><td>P002</td><td>Viernes 2pm</td></tr>
+            <tr><td>C111</td><td>P006</td><td>Viernes 10am</td></tr>
+            <tr><td>C112</td><td>P006</td><td>Martes 9am</td></tr>
+            <tr><td>C113</td><td>P007</td><td>Lunes 3pm</td></tr>
+            <tr><td>C114</td><td>P008</td><td>Jueves 4pm</td></tr>
+            <tr><td>C115</td><td>P009</td><td>Miércoles 9am</td></tr>
+            <tr><td>C116</td><td>P010</td><td>Jueves 10am</td></tr>
+            <tr><td>C117</td><td>P010</td><td>Martes 3pm</td></tr>
+        </table>
+
+        <br>
+
+        <strong>Tabla Inscripciones (3FN):</strong>
+        <table>
+            <tr><th>EstudianteID</th><th>CursoID</th></tr>
+            <tr><td>S001</td><td>C101</td></tr>
+            <tr><td>S002</td><td>C101</td></tr>
+        </table>
+
+        <h3>Dependencias identificadas:</h3>
+        <ul>
+            <li><code>{EstudianteID, CursoID}</code> → <code>{ProfesorID, Horario}</code> (clave compuesta válida)</li>
+            <li><code>CursoID</code> → <code>{ProfesorID, Horario}</code> (no es clave pero determina otros atributos, viola FNBC)</li>
+        </ul>
+
+        <h3>Proceso de normalización a FNBC:</h3>
+        <ol>
+            <li>Identificar la dependencia problemática: <code>CursoID → ProfesorID, Horario</code></li>
+            <li>Separar en dos tablas para eliminar dependencia parcial.</li>
+            <li>Mantener tabla de inscripción con solo las claves <code>EstudianteID</code> y <code>CursoID</code>.</li>
+        </ol>
+
+        <h3>Justificación práctica:</h3>
+        <p>
+            Esta estructura elimina dependencias ocultas, permite modificar profesores o horarios sin afectar inscripciones,
+            y facilita mantenimiento sin inconsistencias.
+        </p>
+
+        <h3>Resumen para gráfico Donut (Cursos asignados por profesor):</h3>
+        <table>
+            <tr><th>ProfesorID</th><th>CursosAsignados</th></tr>
+            <tr><td>P001</td><td>3</td></tr>
+            <tr><td>P002</td><td>4</td></tr>
+            <tr><td>P003</td><td>1</td></tr>
+            <tr><td>P004</td><td>1</td></tr>
+            <tr><td>P005</td><td>1</td></tr>
+            <tr><td>P006</td><td>2</td></tr>
+            <tr><td>P007</td><td>1</td></tr>
+            <tr><td>P008</td><td>1</td></tr>
+            <tr><td>P009</td><td>1</td></tr>
+            <tr><td>P010</td><td>2</td></tr>
+        </table>
+            <div class="ejemplo_3fn">
+                <div id="chartdiv3"></div>
             </div>
     </div>
 
