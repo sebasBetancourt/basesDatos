@@ -25,3 +25,7 @@ Explicar la normalización paso a paso con:
 - Gráficos animados e interactivos.
 
 ---
+
+## ⏯️ Video expositivo
+
+- https://youtu.be/lIRJZT8i998
